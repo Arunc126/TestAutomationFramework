@@ -1,10 +1,7 @@
 package org.common;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import org.utilities.ExcelUtils;
 import org.utilities.HTMLReporter;
 import org.utilities.RestAssuredUtils;
@@ -22,13 +19,13 @@ public class BaseTest extends HTMLReporter{
 
     @Parameters({"browser"})
     @BeforeMethod
-    public void setUp(String browser, Method method) {
+    public void setUp(@Optional("chrome") String browser, Method method) {
         // Initialize WebDriver using existing Selenium utility class
         driver = SeleniumUtils.initWebDriver(browser);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // Initialize RestAssuredUtils
-        restAssuredUtils = new RestAssuredUtils("http://api.example.com");
+        restAssuredUtils = new RestAssuredUtils("https://api.openweathermap.org/");
 
         // Initialize ExcelUtils
         excelUtils = new ExcelUtils();

@@ -8,7 +8,7 @@ public class HTMLReporter {
 
     private static ExtentReports extent;
     private static ExtentHtmlReporter htmlReporter;
-    private static ExtentTest test;
+    public static ExtentTest test;
 
     public static void startReport(String reportPath) {
         htmlReporter = new ExtentHtmlReporter(reportPath);

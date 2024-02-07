@@ -9,7 +9,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <selenium.version>4.1.0</selenium.version>
+        <selenium.version>4.8.1</selenium.version>
         <restassured.version>4.4.0</restassured.version>
         <testng.version>7.4.0</testng.version>
         <extentreports.version>4.0.9</extentreports.version>
@@ -21,6 +21,11 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-http-jdk-client</artifactId>
             <version>${selenium.version}</version>
         </dependency>
 
@@ -57,6 +62,13 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>5.2.3</version>
+        </dependency>
+
+        <!-- Bonigarcia -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.4.1</version>
         </dependency>
     </dependencies>
 
